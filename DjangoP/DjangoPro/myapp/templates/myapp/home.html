@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+
+
+{% block title %}
+Temp Inherit Home Page
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Classroom</h1>
+    <table class="table table-stripe">
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Section</th>
+        </tr>
+        {% for classroom in classrooms %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{classroom.name}}</td>
+            <td>{{classroom.section}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="container">
+    <h1>Details of Students</h1><br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.N</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.age}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.address}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
